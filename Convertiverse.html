@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image to PDF Converter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Convertiverse.css" />
+</head>
+<body>
+  <header>Image to PDF Converter</header>
+  <a class="back-link" href="index.html">&larr; Back to all tools</a>
+  <div class="container" role="main">
+    <!-- Wrap input inside label for better click compatibility -->
+    <label class="custom-file-upload" tabindex="0" aria-label="Upload images for PDF conversion" id="file-input-label">
+      Click or tap to select images
+      <input id="image-input" type="file" accept="image/*" multiple aria-describedby="upload-instructions" />
+    </label>
+    <div id="preview" aria-live="polite" aria-atomic="true"></div>
+    <button id="convert-btn" disabled aria-live="polite">
+      Convert to PDF
+    </button>
+  </div>
+  <div id="footer" aria-hidden="true">Built with jsPDF &mdash; Select multiple images, then convert.</div>
+
+  <!-- Load jsPDF library from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <!-- Load your own JavaScript file -->
+  <script src="Convertiverse.js"></script>
+</body>
+</html>

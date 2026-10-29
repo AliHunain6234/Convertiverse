@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | PDF Tools Hub</title>
+  <style>
+    .topnav { margin-top: 10px; font-size: 15px; }
+    .topnav a { color: white; margin: 0 10px; text-decoration: none; opacity: 0.9; }
+    .topnav a:hover, .topnav a.active { text-decoration: underline; opacity: 1; }
+    #form-note { margin-top: 12px; color: #1b6e2a; font-weight: 600; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #eef2f3;
+    }
+
+    header {
+      background-color: #2196F3;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    main {
+      padding: 40px;
+      max-width: 700px;
+      margin: auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .emails {
+      margin-bottom: 30px;
+    }
+
+    .emails p {
+      margin: 5px 0;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    form button {
+      background-color: #2196F3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    form button:hover {
+      background-color: #0b7dda;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="Aboutus.html">About</a>
+      <a href="ourServices.html">Services</a>
+      <a class="active" href="contactus.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="emails">
+      <h2>Contact</h2>
+      <p>Ali Hunain: nain1301@example.com</p>
+    </section>
+
+    <section class="form-section">
+      <h2>Complaint Form</h2>
+      <form id="complaint-form" action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" rows="5" placeholder="Your Complaint..." required></textarea>
+        <button type="submit">Submit Complaint</button>
+        <p id="form-note" role="status"></p>
+      </form>
+      <script>
+        // This class project has no server, so the form cannot send anything. Say so instead of doing nothing.
+        document.getElementById('complaint-form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          document.getElementById('form-note').textContent =
+            'Thank you! This is a class demo without a server, so the message was not sent. Please email the team directly.';
+          this.reset();
+        });
+      </script>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Class Project Team
+  </footer>
+
+</body>
+</html>

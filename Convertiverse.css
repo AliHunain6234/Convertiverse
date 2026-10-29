@@ -1,0 +1,181 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #020205, #32174d);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+header {
+  padding: 1em 1.2em 0 1.2em;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.back-link {
+  color: #ffe600;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.container {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(4, 148, 245, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 1rem 1.5rem 1.5rem;
+  width: 90%;
+  max-width: 340px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+label.custom-file-upload {
+  border: 2px dashed #fff;
+  border-radius: 12px;
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+  user-select: none;
+  margin-bottom: 0.8rem;
+}
+label.custom-file-upload:hover {
+  background-color: #764ba2;
+  border-color: #ffe600;
+  color: #ffe600;
+}
+label.custom-file-upload:active {
+  background-color: #552b6a;
+  border-color: #ffd500;
+  color: #ffd500;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#preview {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+#preview img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+#preview img:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+button#convert-btn {
+  background: #ffe600;
+  border: none;
+  color: #430f83;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+  user-select: none;
+  box-shadow: 0 5px 15px rgba(255,230,0,0.6);
+}
+button#convert-btn:disabled {
+  background: #99999999;
+  color: #444;
+  cursor: default;
+  box-shadow: none;
+}
+button#convert-btn:hover:not(:disabled) {
+  background: #ffcc00;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255,204,0,0.9);
+}
+button#convert-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+#loader {
+  margin-left: 10px;
+  border: 3px solid #fff;
+  border-top: 3px solid #430f83;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#footer {
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  color: #ddd;
+  text-align: center;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* Scrollbar Styling for preview box */
+#preview::-webkit-scrollbar {
+  width: 6px;
+}
+#preview::-webkit-scrollbar-thumb {
+  background: rgba(255, 230, 0, 0.6);
+  border-radius: 3px;
+}
+#preview::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (max-width: 400px) {
+  #preview img {
+    width: 60px;
+    height: 60px;
+  }
+}
+

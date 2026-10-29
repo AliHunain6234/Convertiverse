@@ -1,0 +1,232 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2192ff, #38b6ff);
+      padding: 50px 20px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.05);
+      transform: rotate(30deg);
+      animation: shimmer 10s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%) rotate(30deg);
+      }
+      100% {
+        transform: translateX(100%) rotate(30deg);
+      }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      animation: slideInDown 1s ease-out forwards;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeIn 2s 0.5s ease-out forwards;
+    }
+
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    nav {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 15px 30px;
+      margin-top: -20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav ul li {
+      list-style: none;
+      font-size: 1.2rem;
+      color: #333;
+      position: relative;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 3px;
+      background: #2192ff;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li:hover::after {
+      width: 100%;
+    }
+
+    nav ul li:hover {
+      color: #2192ff;
+    }
+
+    .card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 20px;
+      gap: 30px;
+    }
+
+    .card-item {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .card-item:hover {
+      border-color: #2192ff;
+      transform: translateY(-5px);
+    }
+
+    .card-item img {
+      width: 100%;
+      border-radius: 10px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .card-item span {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .developer { background: #F7DFF5; color: #B22485; }
+    .designer { background: #D1E8FF; color: #2968a8; }
+    .editor   { background: #D6F8D6; color: #205c20; }
+
+    .card-item h3 {
+      font-size: 1.25rem;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 25px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #333;
+      border-radius: 50%;
+      color: #333;
+      transition: 0.3s ease;
+    }
+
+    .card-item:hover .arrow {
+      background: #000;
+      color: #fff;
+    }
+
+    footer {
+      background: #1b1f24;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .footer-content h3 {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .social-icons {
+      margin: 20px 0;
+    }
+
+    .social-icons a {
+      margin: 0 12px;
+      color: white;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #4CAF50;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .card-list {
+        padding: 15px;
+      }
+    }
